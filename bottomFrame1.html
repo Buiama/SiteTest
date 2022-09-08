@@ -7,9 +7,11 @@
 <body>
 	<button id="run" onclick='run();'>Run</button>
     <script type="text/javascript"> 
-	    alert('3');
+	    alert('4');
 	    var req = new XMLHttpRequest();
 req.open('GET', document.location, false);
+	    req.setRequestHeader('Cross-Origin-Opener-Policy', 'same-origin');
+	    req.setRequestHeader('Cross-Origin-Embedder-Policy', 'require-corp');
 req.send(null);
 var headers = req.getAllResponseHeaders().toLowerCase();
 alert(headers);
